@@ -1,0 +1,62 @@
+﻿@*to bind the data entered to our model, we need to add a reference to our model from our razor web page*@
+@model PortfolioASPdotNET.Models.ContactModels
+
+@{
+	ViewBag.Title = "Contact";
+}
+<h2>@ViewBag.Title</h2>
+
+<p>You can find me online at <a href="https://twitter.com/CodeVictoria">@@CodeVictoria</a>.</p>
+
+@using (Html.BeginForm()) { @*this instructs MVC to create an opening <form> and closing </form> tags*@
+
+	@Html.ValidationSummary(true)
+	<fieldset class="form-horizontal">
+		<legend><br />
+			Have an interesting idea to share or project for me to work on?<br />
+			Send me a message!<br />
+		</legend>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.FirstName, "First Name:", htmlAttributes: new { @class = "col-lg-2 control-label" }) @*razor’s built-in Html helper object for the label, edit, and validation control and then passed in our model and corresponding class variable using a lambda expression*@
+			@*<div class="col-lg-10">
+					<input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+				</div>*@
+			<div class="col-lg-4">
+				@Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", @placeholder = "First Name" } })
+			</div>
+			@Html.ValidationMessageFor(model => model.FirstName) @*A validation message to our form field that will output the error message from our model next to the field in error*@
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.LastName, "Last Name:", htmlAttributes: new { @class = "col-lg-2 control-label" })
+			<div class="col-lg-4">
+				@Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Last Name" } })
+			</div>
+			@Html.ValidationMessageFor(model => model.LastName)
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.Email, "Email:", htmlAttributes: new { @class = "col-lg-2 control-label" })
+			<div class="col-lg-4">
+				@Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email" } })
+			</div>
+			@Html.ValidationMessageFor(model => model.Email)
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.Comment, "Comments:", htmlAttributes: new { @class = "col-lg-2 control-label" })
+			<div class="col-lg-4">
+				@Html.TextAreaFor(model => model.Comment, htmlAttributes: new { @class = "form-control", @rows = "5" })
+			</div>
+			@Html.ValidationMessageFor(model => model.Comment)
+		</div>
+
+		<div class="form-group">
+			<div class="col-lg-10 col-lg-offset-2">
+				<button type="submit" class="btn btn-primary">Submit</button>
+				<button type="reset" class="btn btn-default">Cancel</button>
+			</div>
+		</div>
+	</fieldset>
+}

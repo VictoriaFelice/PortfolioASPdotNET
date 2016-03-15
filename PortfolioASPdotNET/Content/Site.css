@@ -1,0 +1,60 @@
+﻿body {
+	font-size: 18px;
+	padding-top: 100px;
+	padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+	white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+	max-width: 280px;
+}
+
+.navbar-inverse {
+	border-top: solid 10px #ED391B;
+}
+
+.img-circle {
+	margin-top: 20px;
+}
+
+footer {
+	text-align: center;
+}
+
+/* contact form styles */
+.btn-primary {
+	background-color: #ED391B;
+	border-color: #ED391B;
+}
+
+legend {
+	font-size: 20px;
+	color: #772953;
+}
+
+.field-validation-error {
+	color: red;
+	line-height: 2;
+}
+
+
+@media screen and (min-width: 768px) {
+	.nav.navbar-nav {
+		float: right;
+	}
+}
