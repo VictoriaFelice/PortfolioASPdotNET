@@ -20,9 +20,9 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li>@Html.ActionLink("About", "Index", "Home")</li>
-					<li>@Html.ActionLink("Portfolio", "Portfolio", "Home")</li>
-					<li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+					<li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">@Html.ActionLink("About", "Index", "Home")</li>
+					<li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Portfolio" ? "active" : "")">@Html.ActionLink("Portfolio", "Portfolio", "Home")</li>
+					<li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Contact" ? "active" : "")">@Html.ActionLink("Contact", "Contact", "Home")</li>
 				</ul>
 			</div>
 		</div>
