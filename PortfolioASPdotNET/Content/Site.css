@@ -36,6 +36,11 @@ footer {
 	text-align: center;
 }
 
+/* about page styles */
+.about {
+    margin-bottom: 100px;
+}
+
 /* contact form styles */
 .btn-primary {
 	background-color: #ED391B;
@@ -56,5 +61,9 @@ legend {
 @media screen and (min-width: 768px) {
 	.nav.navbar-nav {
 		float: right;
+	}
+	/* about page styles */
+	.about {
+		margin-bottom: 200px;
 	}
 }
